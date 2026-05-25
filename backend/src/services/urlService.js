@@ -1,4 +1,4 @@
-const prisma = require('../prisma/client');
+const prisma = require('../../prisma/client');
 const generateShortCode = require('../utils/generateShortCode');
 
 const createShortUrl = async (originalUrl) => {
