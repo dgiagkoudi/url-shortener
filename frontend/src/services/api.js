@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000/api";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000/api";
 
 const handleResponse = async (res) => {
   if (!res.ok) {
@@ -28,7 +28,7 @@ export const getAllLinks = async () => {
 };
 
 export const deleteLink = async (id) => {
-  const res = await fetch(`http://localhost:3000/api/links/${id}`, {
+  const res = await fetch(`${BASE_URL}/links/${id}`, {
     method: "DELETE",
   });
   return res.json();
